@@ -11,9 +11,10 @@ app.use(bodyParser.json());
 
 //app.use('/api', router);
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
   console.log("server started on 3000")
 })
+
 
 app.use('/user', express.static(path.join(__dirname, './client-app')));
 app.use('/', express.static(path.join(__dirname, './admin-app')));
